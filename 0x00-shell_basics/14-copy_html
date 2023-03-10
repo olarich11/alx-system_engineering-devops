@@ -1,2 +1,2 @@
-cp -u#!/bin/bash
+#!/bin/bash
 cp -un ".html ../
