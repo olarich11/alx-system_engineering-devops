@@ -1,2 +1,14 @@
 #!/bin/bash
-echo $(printf %o $(($((5#$(echo $WATER | tr 'water' '01234'))) + $((5#$(echo $STIR | tr 'stir.'01234'))))) | tr '01234567' 'bestchol')
+
+WATER="water"
+STIR="stir."
+
+WATER_BASE_10=$(echo $WATER | tr 'water' '01234')
+STIR_BASE_10=$(echo $STIR | tr 'stir.' '01234')
+
+SUM_BASE_10=$((5#$WATER_BASE_10 + 5#$STIR_BASE_10))
+
+RESULT_BASE_BESTCHOL=$(printf "%o" $SUM_BASE_10 | tr '01234567' 'bestchol')
+
+echo $RESULT_BASE_BESTCHOL
+
