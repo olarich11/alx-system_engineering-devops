@@ -1,4 +1,8 @@
-#   When given the "stop" argument:
+#!/usr/bin/env bash
+#    When gievn the "start" argument:
+#    1. It initiates the manage_my_process" script
+#    2. Generates file containing its PID in /var/run/my_process.pid
+#    When given the "stop" argument:
 #     1. Terminates the manage_my_process script.
 #     2. Remove the file /var/run/my_process.pid
 #     3. Displays the "manage_my_process stopped"
