@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# Monitors activity on port 98 within the localhost
+
+nc -l localhost 98
