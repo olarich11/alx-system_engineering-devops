@@ -1,8 +1,18 @@
 #!/usr/bin/env bash
-# installs nginx and configure it to listen on port 80
-# print "Hello World"
+# Instructions for installing Nginx on Web-Sever-01
 
-sudo apt-get -y update
+# Ensuring Packages are up to date before proceeding with Installations
+sudo apt-get update
 sudo apt-get -y install nginx
-echo 'Hello World!' > /var/www/html/index.nginx-debian.html
+
+# Setting up the Uncomplicated Firewall (UFW) to permit incoming traffic for the Nginx HTTP service
+sudo ufw allow 'Nginx HTTP'
+
+# Crafting an index.html page
+echo "Hello World!" | sudo tee /var/www/html/index.html
+
+# Checking Nginx configurations for Syntax errors
+sudo nginx -t
+
+# Restarting Nginx
 sudo service nginx start
