@@ -1,78 +1,41 @@
-0x06. Regular expression
-Tasks
-0. Simply matching School
-Requirements:
+# Regular expression
 
-The regular expression must match School
-Using the project instructions, create a Ruby script that accepts one argument and pass it to a regular expression matching method
+In this project, I learned how to use regular expressions. All my regex is built for the Oniguruma library.
 
-1. Repetition Token #0
-Requirements:
+## Tasks :page_with_curl:
 
-Find the regular expression that will match the above cases
-Using the project instructions, create a Ruby script that accepts one argument and pass it to a regular expression matching method
+_Note: Each Ruby script in the project matches regular expressions based on an argument passed to it via the command line._
 
-2. Repetition Token #1
-Requirements:
+* **0. Simply matching Holberton**
+  * [0-simply_match_holberton.rb](./0-simply_match_holberton.rb): Ruby script that matches the regular expression `School`.
 
-Find the regular expression that will match the above cases
-Using the project instructions, create a Ruby script that accepts one argument and pass it to a regular expression matching method
+* **1. Repetition Token #0**
+  * [1-repetition_token_0.rb](./1-repetition_token_0.rb): Ruby script that matches the regular expression `hbn` with between 2-5 `t`'s in between `hb` and `n`.
 
-3. Repetition Token #2
-Requirements:
+* **2. Repetition Token #1**
+  * [2-repetition_token_1.rb](./2-repetition_token_1.rb): Ruby script that matches the regular expression `hn` with 0 or 1 occurrences of `b` and 0 or 1
+  occurrences of `t` in between `h` and `n`.
 
-Find the regular expression that will match the above cases
-Using the project instructions, create a Ruby script that accepts one argument and pass it to a regular expression matching method
+* **3. Repetition Token #2**
+  * [3-repetition_token_2.rb](./3-repetition_token_2.rb): Ruby script that matches the regular expression `hbn` with 1 or more `t`'s in between `hb` and `n`.
 
-4. Repetition Token #3
-Requirements:
+* **4. Repetition Token #3**
+  * [4-repetition_token_3.rb](./4-repetition_token_3.rb): Ruby script that matches the regular expression `hbn` with 0 or more `t`'s in between `hb` and `n`.
 
-Find the regular expression that will match the above cases
-Using the project instructions, create a Ruby script that accepts one argument and pass it to a regular expression matching method
-Your regex should not contain square brackets
+* **5. Not quite HBTN yet**
+  * [5-beginning_and_end.rb](./5-beginning_and_end.rb): Ruby script that matches a regular expression starting with `h` and ending with `n` with any single character in between.
 
-5. Not quite HBTN yet
-mandatory
-Requirements:
+* **6. Call me maybe**
+  * [6-phone_number.rb](./6-phone_number.rb): Ruby script that matches a regular expression representing a 10-digit phone number.
 
-The regular expression must be exactly matching a string that starts with h ends with n and can have any single character in between
-Using the project instructions, create a Ruby script that accepts one argument and pass it to a regular expression matching method
+* **7. OMG WHY ARE YOU SHOUTING?**
+  * [7-OMG_WHY_ARE_YOU_SHOUTING.rb](./7-OMG_WHY_ARE_YOU_SHOUTING.rb): Ruby script that matches regular expressions of uppercase letters.
 
-6. Call me maybe
-mandatory
-This task is brought to you by a professional advisor Neha Jain, Senior Software Engineer at LinkedIn.
-
-Requirement:
-
-The regular expression must match a 10 digit phone number
-
-7. OMG WHY ARE YOU SHOUTING?
-Requirement:
-
-The regular expression must be only matching: capital letters
-Example:
-
-sylvain@ubuntu$ ./7-OMG_WHY_ARE_YOU_SHOUTING.rb "I realLy hOpe VancouvEr posseSs Yummy Soft vAnilla Dupper Mint Ice Nutella cream" | cat -e
-ILOVESYSADMIN$
-sylvain@ubuntu$ ./7-OMG_WHY_ARE_YOU_SHOUTING.rb "WHAT do you SAY?" | cat -e
-WHATSAY$
-sylvain@ubuntu$ ./7-OMG_WHY_ARE_YOU_SHOUTING.rb "cannot read you" | cat -e
-$
-
-8. Textme
-#advanced
-This exercise was prepared for you by Guillaume Plessis, VP of Infrastructure at TextMe. It is something he uses daily. You can thank Guillaume for his project on Twitter.
-
-For this task, you’ll be taking over Guillaume’s responsibilities: one afternoon, a TextMe VoIP Engineer comes to you and explains she wants to run some statistics on the TextMe app text messages transactions.
-
-Requirements:
-
-Your script should output: [SENDER],[RECEIVER],[FLAGS]
-The sender phone number or name (including country code if present)
-The receiver phone number or name (including country code if present)
-The flags that were used
-You can find a [log file here].
-
-Example:
+* **8. Textme**
+  * [100-textme.rb](./100-textme.rb): Ruby script that runs statistics on TextMe app text message transcations.
+  * Output: `[SENDER],[RECEIVER],[FLAGS]` where
+    * `[SENDER]` is the sender phone number or name (including country code if present).
+    * `[RECEIVER]` is the receiver phone number or name (including country code if present).
+    * `[FLAGS]` is the flags that were used.
 
 

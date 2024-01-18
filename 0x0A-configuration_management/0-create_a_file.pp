@@ -1,4 +1,4 @@
-# Using Puppet to creates a file in /tmp
+# creates a file in /tmp
 
 file { '/tmp/school':
   content =>'I love Puppet',

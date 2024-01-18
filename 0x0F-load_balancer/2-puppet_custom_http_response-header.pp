@@ -1,4 +1,4 @@
-# Installs an Nginx server with a customized HTTP header.
+# Installs a Nginx server with custome HTTP header
 
 exec {'update':
   provider => shell,

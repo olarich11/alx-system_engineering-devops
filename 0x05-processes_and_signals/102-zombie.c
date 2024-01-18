@@ -10,7 +10,7 @@
 #include <unistd.h>
 
 /**
- * infinite_while - Run a never-ending while loop.
+ * infinite_while - Run an infinite while loop.
  *
  * Return: Always 0.
  */

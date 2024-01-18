@@ -1,136 +1,75 @@
-0x05. Processes and signals
-Tasks
-0. What is my PID
-mandatory
-Write a Bash script that displays its own PID.
+# Processes and signals
 
-1. List your processes
-mandatory
-Write a Bash script that displays a list of currently running processes.
+In this project, I learned about handling process ID's and signals in Bash with `ps`, `pgrep`, `pkill`, `pkill`, `exit`, and `trap`.
 
-Requirements:
+## Tasks :page_with_curl:
 
-Must show all processes, for all users, including those which might not have a TTY
-Display in a user-oriented format
-Show process hierarchy
+* **0. What is my PID**
+  * [0-what-is-my-pid](./0-what-is-my-pid): Bash script that displays its own PID.
 
-2. Show your Bash PID
-mandatory
-Using your previous exercise command, write a Bash script that displays lines containing the bash word, thus allowing you to easily get the PID of your Bash process.
+* **1. List your processes**
+  * [1-list_your_processes](./1-list_your_processes): Bash script that displays a list of currently running processes.
+  * Shows all processes for all users, including those not featuring a TTY.
+  * Processes are displayed in a user-oriented hierarchy.
 
-Requirements:
+* **2. Show your Bash PID**
+  * [2-show_your_bash_pid](./2-show_your_bash_pid): Bash script that displays lines containing the `bash` keyword based on the script defined in `1-list_your_processes`.
 
-You cannot use pgrep
-The third line of your script must be # shellcheck disable=SC2009 (for more info about ignoring shellcheck error here)
+* **3. Show your Bash PID made easy**
+  * [3-show_your_bash_pid_made_easy](./3-show_your_bash_pid_made_easy): Bash script that displays the PID along with the process name of processes who name contains the word `bash`.
 
-3. Show your Bash PID made easy
-mandatory
-Write a Bash script that displays the PID, along with the process name, of processes whose name contain the word bash.
+* **4. To infinity and beyond**
+  * [4-to_infinity_and_beyond](./4-to_infinity_and_beyond): Bash script that displays `To infinity and beyond` indefinitely with a `sleep 2` in between each iteration.
 
-Requirements:
+* **5. Don't stop me now!**
+  * [5-dont_stop_me_now](./5-dont_stop_me_now): Bash script that kills the [4-to_infinity_and_beyond](./4-to_infinity_and_beyond) process using `kill`.
 
-You cannot use ps
+* **6. Stop me if you can**
+  * [6-stop_me_if_you_can](./6-stop_me_if_you_can): Bash script that kills the [4-to_infinity_and_beyond](./4-to_infinity_and_beyond) process using `pkill`.
 
-4. To infinity and beyond
-mandatory
-Write a Bash script that displays To infinity and beyond indefinitely.
+* **7. Highlander**
+  * [7-highlander](./7-highlander): Bash script that displays `To infinity and beyond` indefinitely with a `sleep 2` in between each iteration.
+  * Displays `I am invincible!!!` upon receiving a `SIGTERM` signal.
 
-Requirements:
 
-In between each iteration of the loop, add a sleep 2
+* **8. Beheaded process**
+  * [8-beheaded_process](./8-beheaded_process): Bash script that kills the process [7-highlander](./7-highlander).
 
-5. Don't stop me now!
-mandatory
-We stopped our 4-to_infinity_and_beyond process using ctrl+c in the previous task, there is actually another way to do this.
 
-Write a Bash script that stops 4-to_infinity_and_beyond process.
+![alt text](https://s3.amazonaws.com/alx-intranet.hbtn.io/uploads/medias/2020/9/d8ecfe9109334898b9540ffd20cf64d1c06f0c09.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIARDDGGGOUSBVO6H7D%2F20220722%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20220722T101619Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=8831f4931db87fcebcbad63936313cf1ea4a070d0d73bc8ba8531a85eb862046)
 
-Requirements:
+* **9. Process and PID file**
+  * [100-process_and_pid_file](./100-process_and_pid_file): Bash script that creates the file `/var/run/myscript.pid` containing its PID and displays `To infinity and beyond` indefinitely.
+  * Displays `I hate the kill command` upon receiving a `SIGTERM` signal.
+  * Displays `Y U no love me?!` upon receiving a `SIGINT` signal.
+  * Deletes the file `/var/run/myscript.pid` and terminates itself upon receiving the `SIGQUIT` or `SIGTERM` signal.
 
-You must use kill
-Terminal #0
 
-6. Stop me if you can
-mandatory
-Write a Bash script that stops 4-to_infinity_and_beyond process.
+![](https://s3.amazonaws.com/alx-intranet.hbtn.io/uploads/medias/2020/9/37975393ead381f4d27f268f7337c6d3013b4991.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIARDDGGGOUSBVO6H7D%2F20220722%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20220722T101619Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=ad4edea7cdd7ecaaa7ab06f0cb40c5b269a1c2777a349c54587445b68ff1c304)
 
-Requirements:
+* **10. Manage my process**
+  * [manage_my_process](./manage_my_process): Bash script that writes `I am alive!` to the file `/tmp/my_process` indefinitely.
+    * Sleeps two seconds in between each write.
+  * [101-manage_my_process](./101-manage_my_process): Bash script that manages the [manage_my_process](./manage_my_process) script.
+  * When passed the argument `start`:
+    * Starts [manage_my_process](./manage_my_process).
+    * Creates a file containing its PID in `/var/run/my_process.pid`.
+    * Displays `manage_my_process started`.
+  * When passed the argument `stop`:
+    * Stops [manage_my_process](./manage_my_process).
+    * Deletes the file `/var/run/my_process.pid`.
+    * Displays `manage_my_process stopped`.
+  * When passed the argument `restart`:
+    * Stops [manage_my_process](./manage_my_process).
+    * Deletes the file `/var/run/my_process.pid`.
+    * Starts `manage_my_process`.
+    * Creates a file containing its PID in `/var/run/my_process.pid`.
+    * Displays `manage_my_process started`.
+  * Otherwise, displays `Usage: manage_my_process {start|stop|restart}`.
 
-You cannot use kill or killall
-Terminal #0
 
-7. Highlander
-mandatory
-Write a Bash script that displays:
+![alt text](https://s3.amazonaws.com/intranet-projects-files/holbertonschool-sysadmin_devops/255/C6mO7b3.jpg)
 
-To infinity and beyond indefinitely
-With a sleep 2 in between each iteration
-I am invincible!!! when receiving a SIGTERM signal
-Make a copy of your 6-stop_me_if_you_can script, name it 67-stop_me_if_you_can, that kills the 7-highlander process instead of the 4-to_infinity_and_beyond one.
-
-Terminal #0
-
-8. Beheaded process
-mandatory
-Write a Bash script that kills the process 7-highlander.
-
-Terminal #0
-
-9. Process and PID file
-#advanced
-Write a Bash script that:
-
-Creates the file /var/run/myscript.pid containing its PID
-Displays To infinity and beyond indefinitely
-Displays I hate the kill command when receiving a SIGTERM signal
-Displays Y U no love me?! when receiving a SIGINT signal
-Deletes the file /var/run/myscript.pid and terminates itself when receiving a SIGQUIT or SIGTERM signal
-
-10. Manage my process
-#advanced
-Read:
-
-&
-init.d
-Daemon
-Positional parameters
-man: sudo
-
-Programs that are detached from the terminal and running in the background are called daemons or processes, need to be managed. The general minimum set of instructions is: start, restart and stop. The most popular way of doing so on Unix system is to use the init scripts.
-
-Write a manage_my_process Bash script that:
-
-Indefinitely writes I am alive! to the file /tmp/my_process
-In between every I am alive! message, the program should pause for 2 seconds
-Write Bash (init) script 101-manage_my_process that manages manage_my_process. (both files need to be pushed to git)
-
-Requirements:
-
-When passing the argument start:
-Starts manage_my_process
-Creates a file containing its PID in /var/run/my_process.pid
-Displays manage_my_process started
-When passing the argument stop:
-Stops manage_my_process
-Deletes the file /var/run/my_process.pid
-Displays manage_my_process stopped
-When passing the argument restart
-Stops manage_my_process
-Deletes the file /var/run/my_process.pid
-Starts manage_my_process
-Creates a file containing its PID in /var/run/my_process.pid
-Displays manage_my_process restarted
-Displays Usage: manage_my_process {start|stop|restart} if any other argument or no argument is passed
-Note that this init script is far from being perfect (but good enough for the sake of manipulating process and PID file), for example we do not handle the case where we check if a process is already running when doing ./101-manage_my_process start, in our case it will simply create a new process instead of saying that it is already started.
-
-11. Zombie
-#advanced
-Read what a zombie process is.
-
-Write a C program that creates 5 zombie processes.
-
-Requirements:
-
-For every zombie process created, it displays Zombie process created, PID: ZOMBIE_PID
-Your code should use the Betty style. It will be checked using betty-style.pl and betty-doc.pl
-When your code is done creating the parent process and the zombies, use the function bellow
+* **11. Zombie**
+  * [102-zombie.c](./102-zombie.c): C program that creates five zombie processes.
+  * For every zombie created, displays `Zombie process created, PID: <ZOMBIE_PID>`.

@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Saves the to-do list details of all employees in JSON format."""
+"""Exports to-do list information of all employees to JSON format."""
 import json
 import requests
 

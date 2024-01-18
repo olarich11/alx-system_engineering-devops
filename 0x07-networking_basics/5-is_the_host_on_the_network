@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Sends 5 network ping requests to the IP argument.
+# Pings an IP address received as an argument 5 times.
 
 if [ $# -eq 0 ]
 then
